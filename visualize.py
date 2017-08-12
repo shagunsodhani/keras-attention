@@ -132,6 +132,7 @@ def main(examples, args):
 
     for example in examples:
         viz.attention_map(example)
+        input("Press enter for the next attention map")
 
     print('Completed visualizations')
 
@@ -143,7 +144,8 @@ if __name__ == '__main__':
     named_args.add_argument('-e', '--examples', metavar='|',
                             help="""Example string/file to visualize attention map for
                                     If file, it must end with '.txt'""",
-                            required=True)
+                            required=False,
+                            default="examples.txt")
     named_args.add_argument('-w', '--weights', metavar='|',
                             help="""Location of weights""",
                             required=False,
